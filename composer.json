@@ -1,5 +1,5 @@
 {
-    "name": "phynix/stripe",
+    "name": "phynix/web",
     "description": "Stripe Package",
     "authors": [
         {
@@ -17,7 +17,7 @@
     "extra": {
         "laravel":{
             "providers":[
-                "Stripe\\App\\StripeServiceProvider"
+                "Web\\App\\WebServiceProvider"
             ]
         }
     }
