@@ -1,7 +1,6 @@
 {
     "name": "phynix/web",
     "description": "Stripe Package",
-    "version": "0.1",
     "license": "MIT",
     "authors": [
         {
