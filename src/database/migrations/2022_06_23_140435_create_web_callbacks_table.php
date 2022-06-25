@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWebStoreTokenTable extends Migration
+class CreateWebCallbacksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateWebStoreTokenTable extends Migration
      */
     public function up()
     {
-        Schema::create('web_store_token', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('token');
-            $table->timestamp('expires_in')->nullable();
+        Schema::create('web_callbacks', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->dateTime('appointment_date');
+            $table->integer('status');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateWebStoreTokenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('web_store_token');
+        Schema::dropIfExists('web_callbacks');
     }
 }

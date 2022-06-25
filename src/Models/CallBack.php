@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CallBack extends Model
 {
-    protected $table = 'callbacks';
+    protected $table = 'web_callbacks';
 
     protected $fillable = [
         'name',
