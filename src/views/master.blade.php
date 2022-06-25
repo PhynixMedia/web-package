@@ -1,20 +1,14 @@
-<!-- extend from root master view -->
-@extends('master')
-
 <!DOCTYPE html>
 <html lang="en">
 
-{{-- Add script and styles here   --}}
+@include("web::includes.header")
 
-    @include("web::includes.header")
+<body>
 
-    <body style="background: black">
+    @yield("pages")
 
-        @yield("pages")
+    @include("web::includes.footer")
 
-        @include("web::includes.footer")
-
-    </body>
+</body>
 
 </html>
-

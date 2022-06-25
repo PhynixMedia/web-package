@@ -1,6 +1,7 @@
 {
     "name": "phynix/web",
     "description": "Stripe Package",
+    "version": "0.1",
     "authors": [
         {
             "name": "Phynix Media ltd",
@@ -9,7 +10,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "phynix/cms": "dev-master"
+        "phynix/cms": "^0.1"
     },
     "autoload": {
         "psr-4": {
