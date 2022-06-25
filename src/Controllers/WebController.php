@@ -31,11 +31,11 @@ class WebController extends WebCoreController
     protected static function get_view($pager)
     {
 
-        try {
+        if(! $pager){
+            abort(404);
+        }
 
-            if(! $pager){
-                abort(404);
-            }
+        try {
 
             $target_page = $pager->toArray() ?? [];
 
