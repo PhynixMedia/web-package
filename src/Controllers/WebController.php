@@ -28,21 +28,32 @@ class WebController extends WebCoreController
         ];
     }
 
-    protected static function get_view($pager){
+    protected static function get_view($pager)
+    {
 
-        $target_page = $pager->toArray() ?? [];
+        try {
 
-        $layout = _value2($pager, "layouts", "layout");
+            $target_page = $pager->toArray() ?? [];
 
-        $pagedata = pagedata( $target_page, true);
+            $layout = _value2($pager, "layouts", "layout");
 
-        if(! $blade = explode(".", $layout)[0]){
-            abort(500);
+            $pagedata = pagedata($target_page, true);
+
+            if (!$blade = explode(".", $layout)[0]) {
+                abort(500);
+            }
+
+            $page = self::get_page($target_page);
+
+            return view("web::pages.{$blade}", compact("pagedata", "page"));
+
+        }catch (\Exception $e){
+
+            \Log::error("WebController Exception: " . $e->getMessage());
+            abort(404);
         }
 
-        $page = self::get_page($target_page);
-
-        return view("web::pages.{$blade}", compact("pagedata", "page"));
+        return null;
     }
 
     public function server($url = "home"){
