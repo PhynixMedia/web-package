@@ -10,7 +10,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "phynix/cms": "^0.1"
+        "phynix/cms": "dev-master"
     },
     "autoload": {
         "psr-4": {
