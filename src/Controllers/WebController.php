@@ -33,6 +33,10 @@ class WebController extends WebCoreController
 
         try {
 
+            if(! $pager){
+                abort(404);
+            }
+
             $target_page = $pager->toArray() ?? [];
 
             $layout = _value2($pager, "layouts", "layout");
