@@ -14,7 +14,7 @@ class CreateWebStoreOrdersTable extends Migration
     public function up()
     {
         Schema::create('web_newsletters', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('email');
             $table->integer('status');
             $table->timestamps();

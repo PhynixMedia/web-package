@@ -14,7 +14,7 @@ class CreateWebAppointmentsTable extends Migration
     public function up()
     {
         Schema::create('web_appointments', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->text('cart_checkout');
             $table->string('unique_code');
             $table->string('fname');
