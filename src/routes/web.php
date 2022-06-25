@@ -11,13 +11,11 @@ Route::group(['middleware' => 'web'], function ()
         Route::post('/feedback', 'Web\App\Controllers\FeedBacksController@store')->name('feedback.store');
         Route::post('/newsletter', 'Web\App\Controllers\NewslettersController@store')->name('newsletter.store');
         Route::post('/quote', 'Web\App\Controllers\QuotesController@store')->name('quote.store');
-
     });
 
-    /**
-     *      GENERAL WEB ROUTES                                      */
+    /***      GENERAL WEB ROUTES                                      */
     Route::get('/', 'Web\App\Controllers\IndexController@index');
-    Route::get('/{page}/{sub?}', 'Web\App\Controllers\IndexController@index');
-    Route::get('/{page}/{sub?}/{extra?}', 'Web\App\Controllers\IndexController@index');
+    Route::get('/{page}/{sub?}', 'Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category)$');
+    Route::get('/{page}/{sub?}/{extra?}', 'Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category)$');
 });
 
