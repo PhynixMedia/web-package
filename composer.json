@@ -8,7 +8,9 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "phynix/cms": "dev-master"
+    },
     "autoload": {
         "psr-4": {
             "Stripe\\App\\":"src"
