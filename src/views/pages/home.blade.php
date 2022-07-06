@@ -2,6 +2,8 @@
 
 @section("content")
 
+@if($products = products())
 
+@endif
 
 @endsection

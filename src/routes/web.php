@@ -14,8 +14,10 @@ Route::group(['middleware' => 'web'], function ()
     });
 
     /***      GENERAL WEB ROUTES                                      */
-    Route::get('/', 'Web\App\Controllers\IndexController@index');
-    Route::get('/{page}/{sub?}', 'Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category)$');
-    Route::get('/{page}/{sub?}/{extra?}', 'Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category)$');
+    /***      GENERAL WEB ROUTES                                      */
+    Route::get('/', '\Web\App\Controllers\IndexController@index');
+    Route::get('/{page}', '\Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category).*$');
+    Route::get('/{page}/{sub?}', '\Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category).*$');
+    Route::get('/{page}/{sub?}/{extra?}', '\Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category).*$');
 });
 
