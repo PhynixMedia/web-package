@@ -2,8 +2,8 @@
 
 @section("content")
 
-@if($products = products())
+{{--@if($products = products())--}}
 
-@endif
+{{--@endif--}}
 
 @endsection

@@ -53,7 +53,7 @@ class WebController extends WebCoreController
 
         }catch (\Exception $e){
 
-            \Log::error("WebController Exception: " . $e->getMessage());
+            \Log::error("WebController Exception: -- " . $e->getMessage());
             abort(404);
         }
 
@@ -69,6 +69,8 @@ class WebController extends WebCoreController
             return self::get_view($this->webService->template()->loadPage($url));
 
         }catch (\Exception $e){
+
+            \Log::error("WebController Exception:: -->>" . $e->getMessage());
             abort(404);
         }
 
