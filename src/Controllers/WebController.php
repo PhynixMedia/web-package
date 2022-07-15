@@ -64,7 +64,7 @@ class WebController extends WebCoreController
 
         try {
 
-            view_captcha(captcha_code(5));
+            captcha(captcha_code(5));
 
             return self::get_view($this->webService->template()->loadPage($url));
 
