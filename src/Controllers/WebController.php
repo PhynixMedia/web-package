@@ -62,6 +62,12 @@ class WebController extends WebCoreController
 
     public function server($url = "home"){
 
+        if(! env("APP_LIVE") && $url == "home"){
+            abort(222);
+        }else if(! env("APP_LIVE") && $url == "staging"){
+            $url = "home";
+        }
+
         try {
 
             captcha(captcha_code(5));
