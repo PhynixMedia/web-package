@@ -64,7 +64,7 @@ class WebController extends WebCoreController
 
         if(! env("APP_LIVE") && $url == "home"){
             abort(222);
-        }else if(! env("APP_LIVE") && $url == "staging"){
+        }elseif(! env("APP_LIVE") && $url == "staging"){
             $url = "home";
         }
 
