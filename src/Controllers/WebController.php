@@ -4,6 +4,7 @@ namespace Web\App\Controllers;
 
 use Cms\App\Services\WebService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class WebController extends WebCoreController
 {
@@ -61,6 +62,13 @@ class WebController extends WebCoreController
     }
 
     public function server($url = "home"){
+
+//        dd(_cookie("cart"));
+
+        /**
+         * Check session, and cookies to update cart data
+         */
+        check_cart("cart");
 
         if(! env("APP_LIVE") && $url == "home"){
             abort(222);
