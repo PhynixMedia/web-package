@@ -16,8 +16,8 @@ Route::group(['middleware' => 'web'], function ()
     /***      GENERAL WEB ROUTES                                      */
     /***      GENERAL WEB ROUTES                                      */
     Route::get('/', '\Web\App\Controllers\IndexController@index');
-    Route::get('/{page}', '\Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category|cart|checkout|account).*$');
-    Route::get('/{page}/{sub?}', '\Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category|cart|checkout|account).*$');
-    Route::get('/{page}/{sub?}/{extra?}', '\Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category|cart|checkout|account).*$');
+    Route::get('/{page}', '\Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category|cart|checkout|account|blogs).*$');
+    Route::get('/{page}/{sub?}', '\Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category|cart|checkout|account|blogs).*$');
+    Route::get('/{page}/{sub?}/{extra?}', '\Web\App\Controllers\IndexController@index')->where('page', '^(?!store|category|cart|checkout|account|blogs).*$');
 });
 
